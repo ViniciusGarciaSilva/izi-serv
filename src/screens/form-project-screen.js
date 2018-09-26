@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import GeneralInfo from '../components/general-info';
-import ListRequirement from '../components/list-requirement';
-import ListSprint from '../components/list-sprints';
+import GeneralInfo from '../components/general-info/general-info';
+import ListRequirement from '../components/list-requirement/list-requirement';
+import ListSprint from '../components/list-sprints/list-sprints';
+import { Container, Segment, Header } from 'semantic-ui-react';
 
 class FormProjectScreen extends Component {
     constructor() {
@@ -9,12 +10,17 @@ class FormProjectScreen extends Component {
     }
     render() {
         return (
-            <div>
-                <GeneralInfo />
-                <ListRequirement />
-                <ListRequirement />
-                <ListSprint/>
-            </div>
+            <Container>
+                <Header as='h2'>Informações Gerais</Header>
+                <Segment ><GeneralInfo/></Segment>
+                <Header as='h2'>Requisitos Funcionais</Header>
+                <Segment><ListRequirement/></Segment>
+                <Header as='h2'>Requisitos Não-Funcionais</Header>
+                <Segment><ListRequirement/></Segment>
+                <Header as='h2'>Sprints</Header>
+                <Segment><ListSprint/></Segment>      
+            </Container>
+            
         )
     }
 }
