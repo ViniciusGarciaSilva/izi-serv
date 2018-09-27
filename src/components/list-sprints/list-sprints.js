@@ -25,21 +25,21 @@ class ListSprint extends Component {
             <Table celled padded>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell width={3}>Tema</Table.HeaderCell>
-                        <Table.HeaderCell width={2}>Início</Table.HeaderCell>
-                        <Table.HeaderCell width={2}>Término</Table.HeaderCell>
+                        <Table.HeaderCell width={1}>Tema</Table.HeaderCell>
+                        <Table.HeaderCell width={1}>Início</Table.HeaderCell>
+                        <Table.HeaderCell width={1}>Término</Table.HeaderCell>
                         <Table.HeaderCell>Descrição</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
                     <Table.Row>
                         <Table.Cell>
-                            <Input />
+                            <Input placeholder='Tema do sprint'/>
                         </Table.Cell>
                         <Table.Cell>
                             <DateInput
                                 name="date"
-                                placeholder="Date"
+                                placeholder="Data"
                                 value={this.state.date}
                                 iconPosition="left"
                                 onChange={this.handleChange} />
@@ -47,14 +47,14 @@ class ListSprint extends Component {
                         <Table.Cell>
                             <DateInput
                                 name="date"
-                                placeholder="Date"
+                                placeholder="Data"
                                 value={this.state.date}
                                 iconPosition="left"
                                 onChange={this.handleChange} />
                         </Table.Cell>
                         <Table.Cell>
                             <Form>
-                                <TextArea placeholder='Tell us more' />
+                                <TextArea placeholder='Detalhes do sprint' />
                             </Form>
                         </Table.Cell>
                     </Table.Row>
