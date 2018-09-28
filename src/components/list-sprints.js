@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Sprint from '../sprint/sprint';
+import Sprint from './sprint';
 import { Table, Input, TextArea, Form } from 'semantic-ui-react'
 import {
     DateInput,
