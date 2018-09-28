@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import Home from './screens/home'
 import './App.css';
-import FormProjectScreen from './screens/form-project-screen';
 import HeaderMaster from './components/header-master'
 
 class App extends Component {
@@ -12,8 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <HeaderMaster/>
-        <FormProjectScreen />
+        <HeaderMaster />
+        <Home />
       </div>
     );
   }
