@@ -21,11 +21,6 @@ class Home extends Component {
                     <ProjectCard />
                     <ServiceCard />
                 </CardGroup>
-
-
-
-
-
             </div>
         );
     }
