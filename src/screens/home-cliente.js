@@ -45,10 +45,7 @@ class HomeCliente extends Component {
                 <Item.Content key={project.name}>
                     <Item.Header as='h3'>{project.name}</Item.Header>
                     <Item.Description><p>{project.description}</p></Item.Description>
-                    <Item.Extra>
-                        <span>{project.status}</span>
-                    </Item.Extra>
-                    <Item.Extra>
+                    <Item.Extra style={{marginTop:10}}>
                         <Label>{project.theme}</Label>
                     </Item.Extra>
                     <Divider />
@@ -59,15 +56,15 @@ class HomeCliente extends Component {
 
     render() {
         return (
-            <Grid style={{ marginTop: 50 }} columns={5} divided >
+            <Grid style={{ marginTop: 50 }} columns={2} centered >
                 <Grid.Row >
-                    <Grid.Column align='right' width={6} >   
+                    <Grid.Column align='right' width={3} >   
                             <Card align='left'>
-                                <Image centered src={ManBusiness} />
+                                <Image centered src={ManBusiness} fluid />
                                 <Card.Content>
                                     <Card.Header>Olá, {this.cliente.name} !</Card.Header>
                                     <Card.Meta>
-                                        <span className='date'>{this.cliente.office}</span>
+                                        <span className='office'>{this.cliente.office}</span>
                                     </Card.Meta>
                                 </Card.Content>
                                 <Card.Content extra>
@@ -83,7 +80,7 @@ class HomeCliente extends Component {
                             {this.mapper(this.projects)}
                         </Segment>
                     </Grid.Column>
-                    <Grid.Column width={5}>
+                    <Grid.Column width={3}>
                     </Grid.Column>
                 </Grid.Row>
 
