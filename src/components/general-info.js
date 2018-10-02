@@ -5,10 +5,10 @@ const options = [
     { key: 'android', text: 'Android', value: 'android' },
     { key: 'ios', text: 'IOS', value: 'ios' },
     { key: 'web', text: 'Web', value: 'web' },
-    { key: 'outros', text: 'Outros', value: 'outros' },
+    { key: 'outros', text: 'Outros', value: 'outross' },
 ]
 
-class GeneralInfoProject extends Component {
+class GeneralInfo extends Component {
     constructor() {
         super();
         this.state = {
@@ -20,11 +20,11 @@ class GeneralInfoProject extends Component {
             <Form>
                 <Form.Group widths='equal'>
                     <Form.Input fluid label='Nome do Projeto' placeholder='Nome do Projeto' />
-                    <Form.Field control={Select} label='Tema do Projeto' options={options} placeholder='Tema do Projeto' />
+                    <Form.Field control={Select} label='Tema' options={options} placeholder='Tema' />
                 </Form.Group>
                 <Form.TextArea label='Detalhes' placeholder='Descreva com mais detalhes seu projeto' />
             </Form>
         )
     }
 }
-export default GeneralInfoProject;
+export default GeneralInfo;

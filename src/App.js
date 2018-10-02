@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FormServiceScreen from './screens/form-service-screen'
 import './App.css';
 import FormProjectScreen from './screens/form-project-screen';
 import LoginScreen from './screens/login-screen';
@@ -14,8 +13,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <HeaderMaster />
-        <FormServiceScreen />
+        {/* <HeaderMaster/> */}
+        <LoginScreen />
       </div>
     );
   }

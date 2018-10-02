@@ -1,9 +1,6 @@
 body > div, body > div > div, 
-body > div > div > div.login-form{
-    height: 100%;
-}
-
-.login-form {
+body > div > div > div.login-form {
+        height: 100%;
         background: url('../images/background.jpg') no-repeat center center fixed;
         background-size: cover;
-}
+    }
