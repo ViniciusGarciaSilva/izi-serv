@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import HomeCliente from './screens/home-cliente'
+import HomePrestador from './screens/home-prestador'
 import './App.css';
 import HeaderMaster from './components/header-master'
+import Home from './screens/home';
 
 class App extends Component {
 
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <div>
         <HeaderMaster />
-        <HomeCliente />
+        <HomePrestador />
       </div>
     );
   }
