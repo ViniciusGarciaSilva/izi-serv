@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
 import Project from '../global/project';
-import Cliente from '../global/cliente'
+import Integrador from '../global/integrador'
 import ManBusiness from '../images/man-business.svg'
 
-class HomeCliente extends Component {
+class Homeintegrador extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,10 +12,10 @@ class HomeCliente extends Component {
     }
 
     // MOCK
-    cliente = new Cliente(
+    integrador = new Integrador(
         'Username', 
         'username@email.com',
-        'Cliente');
+        'Integrador');
 
     // MOCK
     projects = [
@@ -62,15 +62,15 @@ class HomeCliente extends Component {
                             <Card align='left'>
                                 <Image centered src={ManBusiness} fluid />
                                 <Card.Content>
-                                    <Card.Header>Olá, {this.cliente.name} !</Card.Header>
+                                    <Card.Header>Olá, {this.integrador.name} !</Card.Header>
                                     <Card.Meta>
-                                        <span className='office'>{this.cliente.office}</span>
+                                        <span className='office'>{this.integrador.office}</span>
                                     </Card.Meta>
                                 </Card.Content>
                                 <Card.Content extra>
                                     <a>
                                         <Icon name='mail' />
-                                        {this.cliente.email}
+                                        {this.integrador.email}
                                     </a>
                                 </Card.Content>
                             </Card>
@@ -89,4 +89,4 @@ class HomeCliente extends Component {
     }
 }
 
-export default HomeCliente;
+export default Homeintegrador;

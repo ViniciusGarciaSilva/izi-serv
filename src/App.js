@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeCliente from './screens/home-cliente'
+import HomeIntegrador from './screens/home-integrador'
 import './App.css';
 import HeaderMaster from './components/header-master'
 
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <HeaderMaster />
-        <HomeCliente />
+        <HomeIntegrador />
       </div>
     );
   }

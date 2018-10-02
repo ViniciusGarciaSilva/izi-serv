@@ -1,4 +1,4 @@
-class Cliente {
+class Integrador {
     name;
     email;
     office;
@@ -11,4 +11,4 @@ class Cliente {
     }
 }
 
-export default Cliente;
+export default Integrador;
