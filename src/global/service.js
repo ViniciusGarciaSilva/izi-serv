@@ -1,4 +1,4 @@
-class Project {
+class Service {
     name;
     description;
     status;
@@ -12,4 +12,4 @@ class Project {
     }
 }
 
-export default Project;
+export default Service;
