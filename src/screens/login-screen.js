@@ -17,16 +17,16 @@ class LoginScreen extends Component {
                 <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
                     <Grid.Column style={{ maxWidth: 450 }}>
                         <Header as='h2' color='teal' textAlign='center'>
-                            <Image src= {logo} /> Faça o login
+                            <Image src= {logo} /> Log-in to your account
                         </Header>
                         <Form size='large'>
                             <Segment stacked>
-                                <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail' />
+                                <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
                                 <Form.Input
                                     fluid
                                     icon='lock'
                                     iconPosition='left'
-                                    placeholder='Senha'
+                                    placeholder='Password'
                                     type='password'
                                 />
 
@@ -36,7 +36,7 @@ class LoginScreen extends Component {
                             </Segment>
                         </Form>
                         <Message>
-                            Não tem cadastro? <a href='#'> Cadastre-se agora</a>
+                            New to us? <a href='#'>Sign Up</a>
                         </Message>
                     </Grid.Column>
                 </Grid>

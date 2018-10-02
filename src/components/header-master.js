@@ -1,8 +1,14 @@
 import React from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import { Menu, Segment, Header, Visibility } from 'semantic-ui-react'
 
 const HeaderMaster = () => {
   return (
+    <Segment inverted
+      color='blue tertiary'
+      textAlign='center'
+      style={{ backgroundcolor: 'black', minHeight: 300, padding: '1em 0em' }}
+      vertical
+    >
       <Menu fixed='top' inverted color='blue' pointing size='large'>
         <Menu.Item
           name='home'
@@ -19,6 +25,7 @@ const HeaderMaster = () => {
           onClick={this.handleItemClick}
         />
       </Menu>
+    </Segment>
   )
 
 }
