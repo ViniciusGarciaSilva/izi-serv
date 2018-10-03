@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import FormServiceScreen from './screens/form-service-screen'
+=======
+import HomeIntegrador from './screens/home-integrador'
+>>>>>>> feature/homeIntegrador
 import './App.css';
 import FormProjectScreen from './screens/form-project-screen';
 import LoginScreen from './screens/login-screen';
@@ -15,7 +19,11 @@ class App extends Component {
     return (
       <div>
         <HeaderMaster />
+<<<<<<< HEAD
         <FormServiceScreen />
+=======
+        <HomeIntegrador />
+>>>>>>> feature/homeIntegrador
       </div>
     );
   }
