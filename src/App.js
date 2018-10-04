@@ -8,6 +8,7 @@ import LoginScreen from './screens/login-screen';
 import HeaderMaster from './components/header-master'
 import Home from './screens/home';
 import HomeCliente from './screens/home-cliente';
+import OverviewCliente from './screens/overview-cliente';
 
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <HeaderMaster />
-        <HomeCliente />
+        <OverviewCliente />
       </div>
     );
   }

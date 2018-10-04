@@ -3,7 +3,7 @@ import { Menu, Segment } from 'semantic-ui-react'
 
 const HeaderMaster = () => {
   return (
-      <Menu fixed='top' inverted color='blue' pointing size='large'>
+      <Menu fixed='top' inverted color='blue' pointing size='large' style={ {position: "relative"} }>
         <Menu.Item
           name='home'
           active={true}
