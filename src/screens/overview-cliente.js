@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Header, Icon, Image, Menu, Segment, Sidebar, Grid, GridColumn, Checkbox } from 'semantic-ui-react';
+import { Card, Header, Icon, Image, Menu, Segment, Sidebar, Grid, GridColumn, Checkbox } from 'semantic-ui-react';
+import Project from '../global/project';
+import Cliente from '../global/cliente';
+import Integrador from '../global/integrador'
+import ManBusiness from '../images/man-business.svg'
+import WomanBusiness from '../images/woman-business.svg'
 
 class OverviewCliente extends Component {
     constructor() {
@@ -8,30 +13,42 @@ class OverviewCliente extends Component {
         }
     }
 
+    cliente = new Cliente(
+        'Dunha', 
+        'dunha.batata@email.com',
+        'Cliente'
+    );
+
+    integrador = new Integrador(
+        'Joselma', 
+        'naruto@email.com',
+        'Integrador'
+    );
+
     render() {
         return (
-            <Sidebar.Pushable as={Segment} style={{marginTop: 0}}>
                 <Grid style={{height:'100%'}}>
                     <Grid.Row>
-                        <Grid.Column width={2}>
-                            <Sidebar as={Menu} animation='overlay' icon='labeled' inverted vertical visible width='thin'>
-                                <Menu.Item as='a' active={false}>
-                                    <Icon name='user circle' />
-                                    Profile
-                                </Menu.Item>
-                                <Menu.Item as='a' active={false}>
-                                    <Icon name='chart line' />
-                                    Charts
-                                </Menu.Item>
-                                <Menu.Item as='a' active={true}>
-                                    <Icon name='tasks' />
-                                    Sprints
-                                </Menu.Item>
-                            </Sidebar>
+                        <Grid.Column width={3}>
+                            <Card align='left' style={{marginLeft: 20}} >
+                                    <Image centered src={ManBusiness} fluid />
+                                    <Card.Content>
+                                        <Card.Header>Olá, {this.cliente.name} !</Card.Header>
+                                        <Card.Meta>
+                                            <span className='office'>{this.cliente.office}</span>
+                                        </Card.Meta>
+                                    </Card.Content>
+                                    <Card.Content extra>
+                                        <a>
+                                            <Icon name='mail' />
+                                            {this.cliente.email}
+                                        </a>
+                                    </Card.Content>
+                                </Card>
                         </Grid.Column>
 
-                        <Grid.Column width={14}>
-                            <h1>SPRINTS</h1>
+                        <Grid.Column width={8} style={{marginLeft: 40}} >
+                            {/* <h1>SPRINTS</h1> */}
                             <Grid.Row style={{marginRight: 40}}>
                                 <Segment raised>
                                     <Header as='h3'>Sprint 1</Header>
@@ -80,10 +97,30 @@ class OverviewCliente extends Component {
                                 </Segment>
                             </Grid.Row>
                         </Grid.Column>
+
+                        <Grid.Column width={3}>
+                            <Card align='left'>
+                                <Image centered src={WomanBusiness} fluid />
+                                <Card.Content>
+                                    <Card.Header>Olá, {this.integrador.name} !</Card.Header>
+                                    <Card.Meta>
+                                        <span className='office'>{this.integrador.office}</span>
+                                    </Card.Meta>
+                                </Card.Content>
+                                <Card.Content extra>
+                                    <a>
+                                        <Icon name='mail' />
+                                        {this.integrador.email}
+                                    </a>
+                                </Card.Content>
+                                <Card.Content extra>
+                                    <a><Icon name='check circle' style={{color: "green", fontSize:22, marginLeft:40}} /></a>
+                                    <a><Icon name='close' style={{color: "red", fontSize:22, marginLeft:40}} /></a>
+                                </Card.Content>
+                            </Card>
+                        </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            </Sidebar.Pushable>
-
         );
     }
 }
