@@ -9,7 +9,6 @@ import HeaderMaster from './components/header-master'
 import Home from './screens/home';
 import HomeCliente from './screens/home-cliente';
 
-
 class App extends Component {
 
   handleItemClick() {
@@ -19,8 +18,14 @@ class App extends Component {
   render() {
     return (
       <div>
+        <LoginScreen/>
         <HeaderMaster />
-        <HomeCliente />
+        <Home/>
+        <HomeCliente/>
+        <HomeIntegrador/>
+        <HomePrestador/>
+        <FormProjectScreen/>
+        <FormServiceScreen/>    
       </div>
     );
   }
