@@ -12,7 +12,6 @@ import OverviewCliente from './screens/overview-cliente';
 
 
 class App extends Component {
-
   handleItemClick() {
     return;
   }
