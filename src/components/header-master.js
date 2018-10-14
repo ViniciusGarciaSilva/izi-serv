@@ -16,28 +16,24 @@ class HeaderMaster extends React.Component {
           <Menu.Item
             name='minha conta'
             active={false}
-            onClick={this.props.onClick('/minhaconta')}
           />
         </Link>
         <Link to='/projetos'>
           <Menu.Item
             name='projetos'
             active={false}
-            onClick={this.props.onClick('/projetos')}
           />
         </Link>
         <Link to='/integradores'>
           <Menu.Item
             name='integradores'
             active={false}
-            onClick={this.props.onClick('/integradores')}
           />
         </Link>
         <Link to='/prestadores'>
           <Menu.Item
             name='prestadores'
             active={false}
-            onClick={this.props.onClick('/prestadores')}
           />
         </Link>
       </Menu>
