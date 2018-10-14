@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import GeneralInfoProject from '../components/general-info-project';
+import GeneralInfoService from '../components/general-info-service';
 import ListRequirement from '../components/list-requirement';
 import ListSprint from '../components/list-sprints';
 import { Container, Segment, Header, Button} from 'semantic-ui-react';
 
-class FormProjectScreen extends Component {
+class FormServiceScreen extends Component {
     constructor() {
         super();
     }
@@ -12,15 +12,19 @@ class FormProjectScreen extends Component {
         return (
             <Container>
                 <Container style={{marginTop: 100}}>
-                    <Header as='h2'>Informações Gerais</Header>
-                    <Segment ><GeneralInfoProject/></Segment>
+                    <Header as='h2'>Informações Gerais da vaga</Header>
+                    <Segment ><GeneralInfoService/></Segment>
                 </Container>
                 <Container style={{marginTop: 30}}>
-                    <Header as='h2'>Requisitos Funcionais</Header>
+                    <Header as='h2'>Requisitos Técnicos para a vaga</Header>
+                    <Segment ><ListRequirement/></Segment>
+                </Container>
+                <Container style={{marginTop: 30}}>
+                    <Header as='h2'>Requisitos Funcionais do serviço</Header>
                     <Segment><ListRequirement/></Segment>
                 </Container>
                 <Container style={{marginTop: 30}}>
-                    <Header as='h2'>Requisitos Não-Funcionais</Header>
+                    <Header as='h2'>Requisitos Não-Funcionais do serviço</Header>
                     <Segment><ListRequirement/></Segment>
                 </Container>
                 <Container style={{marginTop: 30}}>
@@ -35,4 +39,4 @@ class FormProjectScreen extends Component {
         )
     }
 }
-export default FormProjectScreen;
+export default FormServiceScreen;

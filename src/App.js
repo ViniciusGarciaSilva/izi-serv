@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import HomeCliente from './screens/home-cliente'
+import FormServiceScreen from './screens/form-service-screen'
+import HomeIntegrador from './screens/home-integrador'
+import HomePrestador from './screens/home-prestador'
 import './App.css';
+import FormProjectScreen from './screens/form-project-screen';
+import LoginScreen from './screens/login-screen';
 import HeaderMaster from './components/header-master'
+import Home from './screens/home';
+import HomeCliente from './screens/home-cliente';
 
 class App extends Component {
 
@@ -12,8 +18,14 @@ class App extends Component {
   render() {
     return (
       <div>
+        <LoginScreen/>
         <HeaderMaster />
-        <HomeCliente />
+        <Home/>
+        <HomeCliente/>
+        <HomeIntegrador/>
+        <HomePrestador/>
+        <FormProjectScreen/>
+        <FormServiceScreen/>    
       </div>
     );
   }
