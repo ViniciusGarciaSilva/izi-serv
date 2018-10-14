@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import IdeaCard from '../components/cards/idea-card';
 import ProjectCard from '../components/cards/project-card';
-import { Segment, CardGroup } from 'semantic-ui-react';
 import ServiceCard from '../components/cards/service-card';
+import { Segment, CardGroup } from 'semantic-ui-react';
+import { Route, NavLink } from 'react-router-dom';
+
 
 class Home extends Component {
 
@@ -17,10 +19,14 @@ class Home extends Component {
                 >
                 </Segment>
                 <CardGroup fluid centered style={{ marginTop: 50 }}>
-                    <IdeaCard />
+                    <NavLink to='/idea'><IdeaCard /></NavLink>
                     <ProjectCard />
                     <ServiceCard />
                 </CardGroup>
+
+                
+
+
             </div>
         );
     }
