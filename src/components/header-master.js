@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class HeaderMaster extends React.Component {
   render() {
