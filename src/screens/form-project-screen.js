@@ -37,7 +37,7 @@ class FormProjectScreen extends Component {
             return (
                 <Container style={{ marginTop: 30 }}>
                     <Header as='h2'>Requisitos Funcionais</Header>
-                    <Segment><ListRequirement /></Segment>
+                    <Segment><ListRequirement key={1} listRequirements={this.state.project.functionalRequirements} /></Segment>
                 </Container>
             )
         }
@@ -45,7 +45,7 @@ class FormProjectScreen extends Component {
             return (
                 <Container style={{ marginTop: 30 }}>
                     <Header as='h2'>Requisitos Não-Funcionais</Header>
-                    <Segment><ListRequirement /></Segment>
+                    <Segment><ListRequirement key={2} listRequirements={this.state.project.notFunctionalRequirements}/></Segment>
                 </Container>
             )
         }

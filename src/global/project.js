@@ -1,21 +1,19 @@
 export class Project {
-    general = {
-        name:'',
-        theme:'',
-        details:'',
-    };
-    functionalRequirements = [{
-        name:'',
-        relevance:'',
-    }];
-    notFunctionalRequirements = [{
-        name:'',
-        relevance:'',
-    }];
-    sprints = [{
-        name:'',
-        date:'',
-    }]
+    general;
+    functionalRequirements;
+    notFunctionalRequirements;
+    sprints;
+
+    constructor() {
+        this.general = {
+            name:'',
+            theme:'',
+            details:'',
+        };
+        this.functionalRequirements = [];
+        this.notFunctionalRequirements = [];
+        this.sprints = []
+    }
 }
 
 export default Project;
