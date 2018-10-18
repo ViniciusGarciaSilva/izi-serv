@@ -1,15 +1,19 @@
-class Project {
-    name;
-    description;
-    status;
-    theme;
+export class Project {
+  general;
+  functionalRequirements;
+  notFunctionalRequirements;
+  sprints;
 
-    constructor(name, description, status, theme){
-        this.name = name;
-        this.description = description;
-        this.status = status;
-        this.theme = theme;
-    }
+  constructor() {
+    this.general = {
+      name: '',
+      theme: '',
+      details: '',
+    };
+    this.functionalRequirements = [];
+    this.notFunctionalRequirements = [];
+    this.sprints = [];
+  }
 }
 
 export default Project;
