@@ -2,112 +2,112 @@ import React, { Component } from 'react';
 import { Form, Select } from 'semantic-ui-react';
 
 const options = [
-    { key: 'android', text: 'Android', value: 'android' },
-    { key: 'ios', text: 'IOS', value: 'ios' },
-    { key: 'web', text: 'Web', value: 'web' },
-    { key: 'outros', text: 'Outros', value: 'outros' },
+  { key: 'android', text: 'Android', value: 'android' },
+  { key: 'ios', text: 'IOS', value: 'ios' },
+  { key: 'web', text: 'Web', value: 'web' },
+  { key: 'outros', text: 'Outros', value: 'outros' },
 ]
 
 class GeneralInfoProject extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            projectTheme: this.props.generalInfo.theme,
-            projectName: this.props.generalInfo.name,
-            projectDetails: this.props.generalInfo.details,
-            themeValid: false,
-            nameValid: false,
-            detailsValid: false,
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      projectTheme: this.props.generalInfo.theme,
+      projectName: this.props.generalInfo.name,
+      projectDetails: this.props.generalInfo.details,
+      themeValid: false,
+      nameValid: false,
+      detailsValid: false,
     }
+  }
 
-    onChangeProjectName = (event) => {
-        var name = event.target.value;
-        var nameValid = this.checkName(name);
-        this.setState({ 
-            projectName: name, nameValid: nameValid }, 
-            this.checkValidForm(nameValid, this.state.themeValid, this.state.detailsValid)    
-        );
-    }
+  onChangeProjectName = (event) => {
+    var name = event.target.value;
+    var nameValid = this.checkName(name);
+    this.setState({
+      projectName: name, nameValid: nameValid
+    },
+      this.checkValidForm(nameValid, this.state.themeValid, this.state.detailsValid)
+    );
+  }
 
-    onChangeProjectTheme = (event) => {
-        var theme = event.target.value;
-        var themeValid = this.checkName(theme);
-        this.setState({ 
-            projectTheme: theme, themeValid: themeValid },
-            this.checkValidForm(this.state.nameValid, themeValid, this.state.detailsValid)
-        );    
-    }
+  onChangeProjectTheme = (event, data) => {
+    var theme = data.value;
+    var themeValid = this.checkTheme(theme);
+    this.setState({
+      projectTheme: theme, themeValid: themeValid
+    },
+      this.checkValidForm(this.state.nameValid, themeValid, this.state.detailsValid)
+    );
+  }
 
-    onChangeProjectDetails = (event) => {
-        var details = event.target.value;
-        var detailsValid = this.checkName(details);
-        this.setState({ 
-            projectDetails: details, detailsValid: detailsValid },
-            this.checkValidForm(this.state.nameValid, this.state.themeValid, detailsValid)
-        );
-    }
+  onChangeProjectDetails = (event) => {
+    var details = event.target.value;
+    var detailsValid = this.checkName(details);
+    this.setState({
+      projectDetails: details, detailsValid: detailsValid
+    },
+      this.checkValidForm(this.state.nameValid, this.state.themeValid, detailsValid)
+    );
+  }
 
-    checkValidForm(nameValid, themeValid, detailsValid) {
-        this.props.validForms(
-            this.state.projectName,
-            this.state.projectTheme,
-            this.state.projectDetails,
-            themeValid && nameValid && detailsValid,
-        );
-    }
+  checkValidForm(nameValid, themeValid, detailsValid) {
+    this.props.validForms(
+      this.state.projectName,
+      this.state.projectTheme,
+      this.state.projectDetails,
+      themeValid && nameValid && detailsValid,
+    );
+  }
 
-    checkName(name) {
-        var nameRegex = new RegExp('[a-zA-Z0-9]{4,}');
-        return nameRegex.test(name);
-    }
+  checkName(name) {
+    var nameRegex = new RegExp('[a-zA-Z0-9]{4,}');
+    return nameRegex.test(name);
+  }
 
-    checkTheme(theme) {
-        var themeRegex = new RegExp('[a-zA-Z0-9]{4,}');
-        return themeRegex.test(theme);
-    }
+  checkTheme(theme) {
+    return theme != '';
+  }
 
-    checkDetails(details) {
-        var detailsRegex = new RegExp('[a-zA-Z0-9]{4,}');
-        return detailsRegex.test(details);
-    }
+  checkDetails(details) {
+    var detailsRegex = new RegExp('[a-zA-Z0-9]{4,}');
+    return detailsRegex.test(details);
+  }
 
-    componentDidMount() {
-        this.setState({
-            nameValid: this.checkName(this.state.projectName),
-            detailsValid: this.checkDetails(this.state.projectDetails),
-            themeValid: this.checkTheme(this.state.projectTheme),
-        });
-    }
+  componentDidMount() {
+    this.setState({
+      nameValid: this.checkName(this.state.projectName),
+      detailsValid: this.checkDetails(this.state.projectDetails),
+      themeValid: this.checkTheme(this.state.projectTheme),
+    });
+  }
 
-    render() {
-        return (
-            <Form>
-                <Form.Group widths='equal'>
-                    <Form.Input
-                        fluid
-                        label='Nome do Projeto'
-                        placeholder='Nome do Projeto'
-                        value={this.state.projectName}
-                        onChange={(event) => this.onChangeProjectName(event)}
-                    />
-                    <Form.Field
-                        control={Select}
-                        label='Tema do Projeto'
-                        options={options}
-                        placeholder='Tema do Projeto'
-                        value={this.state.projectTheme}
-                        onChange={(event) => this.onChangeProjectTheme(event)}
-                    />
-                </Form.Group>
-                <Form.TextArea
-                    label='Detalhes'
-                    placeholder='Descreva com mais detalhes seu projeto'
-                    value={this.state.projectDetails}
-                    onChange={(event) => this.onChangeProjectDetails(event)}
-                />
-            </Form>
-        )
-    }
+  render() {
+    return (
+      <Form>
+        <Form.Group widths='equal'>
+          <Form.Input
+            fluid
+            label='Nome do Projeto'
+            placeholder='Nome do Projeto'
+            value={this.state.projectName}
+            onChange={(event) => this.onChangeProjectName(event)}
+          />
+          <Form.Select
+            label='Tema do Projeto'
+            options={options}
+            placeholder='Tema do Projeto'
+            onChange={(event, data) => this.onChangeProjectTheme(event, data)}
+          />
+        </Form.Group>
+        <Form.TextArea
+          label='Detalhes'
+          placeholder='Descreva com mais detalhes seu projeto'
+          value={this.state.projectDetails}
+          onChange={(event) => this.onChangeProjectDetails(event)}
+        />
+      </Form>
+    )
+  }
 }
 export default GeneralInfoProject;

@@ -1,15 +1,15 @@
 class Service {
-    name;
-    description;
-    status;
-    theme;
+  name;
+  description;
+  status;
+  theme;
 
-    constructor(name, description, status, theme){
-        this.name = name;
-        this.description = description;
-        this.status = status;
-        this.theme = theme;
-    }
+  constructor(name, description, status, theme) {
+    this.name = name;
+    this.description = description;
+    this.status = status;
+    this.theme = theme;
+  }
 }
 
 export default Service;
