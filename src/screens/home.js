@@ -20,8 +20,8 @@ class Home extends Component {
         </Segment>
         <CardGroup fluid centered style={{ marginTop: 50 }}>
           <NavLink to='/idea'><IdeaCard /></NavLink>
-          <ProjectCard />
-          <ServiceCard />
+          <NavLink to='/projetos'><ProjectCard /></NavLink>
+          <NavLink to='/servicos'><ServiceCard /></NavLink>
         </CardGroup>
 
 

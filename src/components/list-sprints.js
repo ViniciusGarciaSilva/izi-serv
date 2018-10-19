@@ -41,7 +41,11 @@ class ListSprint extends Component {
   }
 
   handleButton = () => {
-    var sprintList = this.state.sprintList;
+    var sprintList;
+    if(!this.state.sprintList)
+      sprintList=[];
+    else 
+      sprintList = this.state.sprintList;
     sprintList.push(new Sprint());
     this.setState({ sprintList: sprintList });
     this.props.validForms(this.state.validSprints, false);

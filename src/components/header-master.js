@@ -12,15 +12,15 @@ class HeaderMaster extends React.Component {
             active={true}
           />
         </Link>
-        <Link to='/minha-conta'>
-          <Menu.Item
-            name='minha conta'
-            active={false}
-          />
-        </Link>
         <Link to='/projetos'>
           <Menu.Item
             name='projetos'
+            active={false}
+          />
+        </Link>
+        <Link to='/serviços'>
+          <Menu.Item
+            name='Servicos'
             active={false}
           />
         </Link>
@@ -36,6 +36,26 @@ class HeaderMaster extends React.Component {
             active={false}
           />
         </Link>
+        <Menu.Menu position='right'>
+          <Link to='/minha-conta'>
+            <Menu.Item
+              name='minha conta'
+              active={false}
+            />
+          </Link>
+          <Link to='/login'>
+            <Menu.Item
+              name='Login'
+              active={false}
+            />
+          </Link>
+          <Link to='/cadastro'>
+            <Menu.Item
+              name='Cadastro'
+              active={false}
+            />
+          </Link>
+        </Menu.Menu>
       </Menu>
     )
   }
