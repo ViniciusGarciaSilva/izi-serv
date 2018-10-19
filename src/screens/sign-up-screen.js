@@ -15,10 +15,10 @@ class SignUpScreen extends Component {
 
     render() {
         return (
-            <div className='sign-in-form'>
+            <div className='sign-in-form' style={{ marginTop: 50 }}>
                 <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
                     <Grid.Column style={{ maxWidth: 450 }}>
-                        <Header as='h2' color='teal' textAlign='center'>
+                        <Header as='h2' textAlign='center' style={{ color: '#2185d0' }}>
                             <Image src= {logo} /> Cadastre-se
                         </Header>
                         <Form size='large'>
@@ -33,7 +33,7 @@ class SignUpScreen extends Component {
                                 <Message>
                                     Você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do GG IZI.
                                 </Message>
-                                <Button color='teal' fluid size='large'>
+                                <Button fluid size='large' style={{ background: '#2185d0', color: 'white' }}>
                                     Aceite e cadastre-se
                                 </Button>
                             </Segment>
