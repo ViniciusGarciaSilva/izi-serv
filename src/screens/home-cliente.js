@@ -3,6 +3,8 @@ import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Contain
 import Project from '../global/project';
 import Cliente from '../global/cliente'
 import ManBusiness from '../images/man-business.svg'
+import OverviewCliente from './overview-cliente';
+import { NavLink, Route } from 'react-router-dom';
 
 class HomeCliente extends Component {
   constructor(props) {
@@ -18,10 +20,11 @@ class HomeCliente extends Component {
   }
 
   mapperProjects(projects) {
+    
     return (
       projects.map((project) =>
         <Item.Content key={project.general.name}>
-          <Item.Header as='h3'>{project.general.name}</Item.Header>
+          <Item.Header as='h3'><NavLink to='/projeto'>{project.general.name} </NavLink></Item.Header>
           <Item.Description><p>{project.general.description}</p></Item.Description>
           <Item.Extra style={{ marginTop: 10 }}>
             <Label>{project.general.theme}</Label>

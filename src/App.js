@@ -19,6 +19,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path='/idea' component={FormProjectScreen} />
           <Route path='/minha-conta' component={HomeCliente} />
+          <Route path="/projeto" exact component={OverviewCliente} />
         </Switch>
       </div>
     );
