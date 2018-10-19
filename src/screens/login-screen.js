@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Input, Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
-import './login.css';
 import logo from '../images/logo.png'
-import background from '../images/background.jpg'
-
 
 class LoginScreen extends Component {
   constructor() {
@@ -13,10 +10,10 @@ class LoginScreen extends Component {
   render() {
     return (
 
-      <div className='login-form'>
+      <div className='login-form' style={{ marginTop: 50 }}>
         <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as='h2' color='teal' textAlign='center'>
+            <Header as='h2' textAlign='center' style={{ color: '#2185d0' }}>
               <Image src={logo} /> Faça o login na sua conta
                         </Header>
             <Form size='large'>
@@ -30,7 +27,7 @@ class LoginScreen extends Component {
                   type='password'
                 />
 
-                <Button color='teal' fluid size='large'>
+                <Button fluid size='large' style={{ background: '#2185d0', color: 'white' }}>
                   Login
                                 </Button>
               </Segment>
