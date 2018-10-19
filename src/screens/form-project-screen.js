@@ -17,7 +17,7 @@ class FormProjectScreen extends Component {
         { valid: false, number: 3 },
         { valid: false, number: 4 },
       ],
-      project: new Project(),
+      project: new Project('', [], [], ''),
       generalValid: false,
     }
   }

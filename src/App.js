@@ -14,9 +14,11 @@ class App extends Component {
   render() {
     return (
       <div>
+        <HeaderMaster/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path='/idea' component={FormProjectScreen} />
+          <Route path='/minha-conta' component={HomeCliente} />
         </Switch>
       </div>
     );
