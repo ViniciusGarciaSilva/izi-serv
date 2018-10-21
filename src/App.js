@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import FormProjectScreen from './screens/form-project-screen';
 import LoginScreen from './screens/login-screen';
 import SignUpScreen from './screens/sign-up-screen';
+import prestadores from './screens/prestadores';
 
 class App extends Component {
   handleItemClick() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/projeto" exact component={OverviewCliente} />
           <Route path="/cadastro" exact component={SignUpScreen} />
           <Route path="/login" exact component={LoginScreen} />
+          <Route path="/prestadores" component={prestadores} />
         </Switch>
       </div>
     );
