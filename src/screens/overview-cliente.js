@@ -27,7 +27,7 @@ class OverviewCliente extends Component {
 
     render() {
         return (
-                <Grid style={{height:'100%'}}>
+                <Grid style={{height:'100%', marginTop: 50}}>
                     <Grid.Row>
                         <Grid.Column width={3}>
                             <Card align='left' style={{marginLeft: 20}} >
