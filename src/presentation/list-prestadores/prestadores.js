@@ -3,7 +3,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import { CardGroup } from 'semantic-ui-react';
 import CardExampleCard from './../home/cards/prestador-card';
 
-class prestadores extends Component {
+class Prestadores extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,4 +48,4 @@ class prestadores extends Component {
   }
 }
 
-export default prestadores;
+export default Prestadores;

@@ -14,22 +14,23 @@ class HomeCliente extends Component {
     }
   }
 
-  componentWillMount(){
-    this.setState({cliente: this.clienteMock, projects: this.projectsMock});
+  componentWillMount() {
+    this.setState({ cliente: this.clienteMock, projects: this.projectsMock });
   }
 
   mapperProjects(projects) {
-    
     return (
       projects.map((project) =>
-        <Item.Content key={project.general.name}>
-          <Item.Header as='h3'><NavLink to='/projeto'>{project.general.name} </NavLink></Item.Header>
-          <Item.Description><p>{project.general.description}</p></Item.Description>
-          <Item.Extra style={{ marginTop: 10 }}>
-            <Label>{project.general.theme}</Label>
-          </Item.Extra>
+        <Container>
+          <Item.Content style={{ marginTop: 20, marginBottom: 20 }} key={project.general.name}>
+            <Item.Header as='h3'><NavLink to='/projeto'>{project.general.name} </NavLink></Item.Header>
+            <Item.Description><p>{project.general.description}</p></Item.Description>
+            <Item.Extra style={{ marginTop: 10 }}>
+              <Label>{project.general.theme}</Label>
+            </Item.Extra>
+          </Item.Content>
           <Divider />
-        </Item.Content>
+        </Container>
       )
     );
   }
@@ -38,7 +39,7 @@ class HomeCliente extends Component {
     return (
       <Grid style={{ marginTop: 50 }} columns={2} centered >
         <Grid.Row >
-          <Grid.Column align='right' width={3} >
+          <Grid.Column align='right' width={4} >
             <Card align='left'>
               <Image centered src={ManBusiness} fluid />
               <Card.Content>
@@ -55,12 +56,12 @@ class HomeCliente extends Component {
               </Card.Content>
             </Card>
           </Grid.Column>
-          <Grid.Column width={5}>
+          <Grid.Column width={6}>
             <Segment>
               {this.mapperProjects(this.state.projects)}
             </Segment>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
           </Grid.Column>
         </Grid.Row>
 
