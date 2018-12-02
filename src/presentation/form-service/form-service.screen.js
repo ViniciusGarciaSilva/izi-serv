@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import GeneralInfoService from '../components/general-info-service';
-import ListRequirement from '../components/list-requirement';
-import ListSprint from '../components/list-sprints';
 import { Container, Segment, Header, Button } from 'semantic-ui-react';
+import GeneralInfoService from './general-info-service.component';
+import ListSprint from './../../components/list-sprints.component';
+import ListRequirement from './../../components/list-requirement.component';
 
 class FormServiceScreen extends Component {
   constructor() {

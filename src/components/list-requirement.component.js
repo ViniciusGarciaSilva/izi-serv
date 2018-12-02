@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RequirementComponent from './requirement.component';
 import { Button, Container } from 'semantic-ui-react';
-import Requirement from '../global/requirement';
+import { Requirement } from './../model/requirement';
+import RequirementComponent from './../presentation/form-service/requirement.component';
 
 class ListRequirement extends Component {
   constructor(props) {

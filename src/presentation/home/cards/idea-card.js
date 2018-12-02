@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image } from 'semantic-ui-react';
-import idea from '../../images/idea.svg'
+import idea from '../../../images/idea.svg'
 
 class IdeaCard extends Component {
   render() {

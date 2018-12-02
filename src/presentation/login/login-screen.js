@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Input, Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
-import logo from '../images/logo.png'
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import logo from '../../images/logo.png'
 
 class LoginScreen extends Component {
   constructor() {

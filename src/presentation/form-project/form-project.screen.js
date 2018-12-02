@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import GeneralInfoProject from '../components/general-info-project';
-import ListRequirement from '../components/list-requirement';
-import ListSprint from '../components/list-sprints';
 import { Container, Segment, Header, Button } from 'semantic-ui-react';
-import StepsIdea from '../components/step-idea'
-import Project from '../global/project';
+import GeneralInfoProject from './general-info-project.component';
+import { Project } from './../../model/project';
+import StepsIdea from './step-idea.component';
+import ListRequirement from './../../components/list-requirement.component';
+import ListSprint from './../../components/list-sprints.component';
 
 class FormProjectScreen extends Component {
   constructor() {
@@ -93,7 +93,7 @@ class FormProjectScreen extends Component {
         <Container style={{ marginTop: 30 }}>
           <Header as='h2'>Sprints</Header>
           <Segment>
-            <ListSprint 
+            <ListSprint
               sprintList={this.state.project.sprints}
               validForms={this.validSprints}
             />
