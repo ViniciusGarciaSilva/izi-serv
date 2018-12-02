@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
-import Project from '../global/project';
 import InfiniteScroll from 'react-infinite-scroller';
-import Integrador from '../global/integrador';
-import ManBusiness from '../images/man-business.svg';
-import CardExampleCard from '../components/cards/prestador-card';
-import ProjectCard from '../components/cards/project-card';
-import ServiceCard from '../components/cards/service-card';
 import { CardGroup } from 'semantic-ui-react';
+import CardExampleCard from './../home/cards/prestador-card';
 
 class prestadores extends Component {
   constructor(props) {

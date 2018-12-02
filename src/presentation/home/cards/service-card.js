@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image } from 'semantic-ui-react';
-import service from '../../images/service.svg'
+import service from '../../../images/service.svg'
 
 class ServiceCard extends Component {
   render() {

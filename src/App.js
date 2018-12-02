@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import HeaderMaster from './components/header-master'
-import Home from './screens/home';
-import HomeCliente from './screens/home-cliente';
-import OverviewCliente from './screens/overview-cliente';
 import { Route, Switch } from 'react-router-dom';
-import FormProjectScreen from './screens/form-project-screen';
-import LoginScreen from './screens/login-screen';
-import SignUpScreen from './screens/sign-up-screen';
-import prestadores from './screens/prestadores';
+import SignUpScreen from './presentation/sign-up/sign-up-screen';
+import prestadores from './presentation/list-prestadores/prestadores';
+import FormProjectScreen from './presentation/form-project/form-project.screen';
+import HomeCliente from './presentation/home-cliente/home-cliente.screen';
+import OverviewCliente from './presentation/overview-cliente/overview-cliente';
+import LoginScreen from './presentation/login/login-screen';
+import Home from './presentation/home/home';
+import HeaderMaster from './components/header-master';
 
 class App extends Component {
   handleItemClick() {
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <HeaderMaster/>
+      <HeaderMaster/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path='/idea' component={FormProjectScreen} />

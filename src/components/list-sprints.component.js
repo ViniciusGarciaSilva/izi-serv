@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Table } from 'semantic-ui-react'
 import SprintComponent from './sprint.component';
-import { Sprint } from '../global/sprint';
+import { Sprint } from './../model/sprint';
 
 class ListSprint extends Component {
   constructor(props) {

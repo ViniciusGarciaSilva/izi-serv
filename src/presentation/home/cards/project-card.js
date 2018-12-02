@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image } from 'semantic-ui-react';
-import project from '../../images/project.svg'
+import project from '../../../images/project.svg'
 
 class ProjectCard extends Component {
   render() {

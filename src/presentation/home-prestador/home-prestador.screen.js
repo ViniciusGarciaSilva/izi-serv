@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
-import Project from '../global/project';
-import Integrador from '../global/integrador'
-import ManBusiness from '../images/man-business.svg'
+import ManBusiness from '../../images/man-engomadinho-jovem.svg'
+import Prestador from './../../model/prestador';
+import Service from './../../model/service';
 
-class Homeintegrador extends Component {
+class HomePrestador extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,41 +12,41 @@ class Homeintegrador extends Component {
   }
 
   // MOCK
-  integrador = new Integrador(
+  prestador = new Prestador(
     'Username',
     'username@email.com',
-    'Integrador');
+    'Prestador');
 
   // MOCK
-  projects = [
-    new Project(
-      'Project Name 1',
-      'Project Description Project Description Project Description Project Description',
+  services = [
+    new Service(
+      'Service Name 1',
+      'Service Description Service Description Service Description Service Description',
       'Pendente 1',
       'Android 1'
     ),
-    new Project(
-      'Project Name 2',
-      'Project Description Project Description Project Description Project Description',
+    new Service(
+      'Service Name 2',
+      'Service Description Service Description Service Description Service Description',
       'Pendente 2',
       'Android 2'
     ),
-    new Project(
-      'Project Name 3',
-      'Project Description Project Description Project Description Project Description',
+    new Service(
+      'Service Name 3',
+      'Service Description Service Description Service Description Service Description',
       'Pendente 3',
       'Android 3'
     ),
   ];
 
-  mapper(projects) {
+  mapper(services) {
     return (
-      projects.map((project) =>
-        <Item.Content key={project.name}>
-          <Item.Header as='h3'>{project.name}</Item.Header>
-          <Item.Description><p>{project.description}</p></Item.Description>
+      services.map((service) =>
+        <Item.Content key={service.name}>
+          <Item.Header as='h3'>{service.name}</Item.Header>
+          <Item.Description><p>{service.description}</p></Item.Description>
           <Item.Extra style={{ marginTop: 10 }}>
-            <Label>{project.theme}</Label>
+            <Label>{service.theme}</Label>
           </Item.Extra>
           <Divider />
         </Item.Content>
@@ -62,22 +62,22 @@ class Homeintegrador extends Component {
             <Card align='left'>
               <Image centered src={ManBusiness} fluid />
               <Card.Content>
-                <Card.Header>Olá, {this.integrador.name} !</Card.Header>
+                <Card.Header>Olá, {this.prestador.name} !</Card.Header>
                 <Card.Meta>
-                  <span className='office'>{this.integrador.office}</span>
+                  <span className='office'>{this.prestador.office}</span>
                 </Card.Meta>
               </Card.Content>
               <Card.Content extra>
                 <a>
                   <Icon name='mail' />
-                  {this.integrador.email}
+                  {this.prestador.email}
                 </a>
               </Card.Content>
             </Card>
           </Grid.Column>
           <Grid.Column width={5}>
             <Segment>
-              {this.mapper(this.projects)}
+              {this.mapper(this.services)}
             </Segment>
           </Grid.Column>
           <Grid.Column width={3}>
@@ -89,4 +89,4 @@ class Homeintegrador extends Component {
   }
 }
 
-export default Homeintegrador;
+export default HomePrestador;

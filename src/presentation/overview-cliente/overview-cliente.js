@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Card, Header, Icon, Image, Menu, Segment, Sidebar, Grid, GridColumn, Checkbox } from 'semantic-ui-react';
-import Project from '../global/project';
-import Cliente from '../global/cliente';
-import Integrador from '../global/integrador'
-import ManBusiness from '../images/man-business.svg'
-import WomanBusiness from '../images/woman-business.svg'
+import Cliente from '../../model/cliente';
+import Integrador from '../../model/integrador'
+import ManBusiness from '../../images/man-business.svg'
+import WomanBusiness from '../../images/woman-business.svg'
 
 class OverviewCliente extends Component {
     constructor() {
