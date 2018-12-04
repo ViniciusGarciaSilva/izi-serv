@@ -1,15 +1,27 @@
-class Service {
+export class Service {
   name;
-  description;
-  status;
   theme;
+  details;
+  project;
+  cliente;
+  integrador;
+  prestador;
+  functionalRequirements;
+  notFunctionalRequirements;
+  sprints;
+  status;
 
-  constructor(name, description, status, theme) {
-    this.name = name;
-    this.description = description;
-    this.status = status;
-    this.theme = theme;
+  constructor(name, details, theme, integrador, project, cliente, prestador, functionalRequirements, notFunctionalRequirements, sprints, status) {
+    this.name = name ? name : '';
+    this.theme = theme ? theme : '';
+    this.details = details ? details : '';
+    this.project = project ? project : '';
+    this.cliente = cliente ? cliente : '';
+    this.integrador = integrador ? integrador : '';
+    this.prestadores = prestador ? prestador : '';
+    this.functionalRequirements = functionalRequirements ? functionalRequirements : [];
+    this.notFunctionalRequirements = notFunctionalRequirements ? notFunctionalRequirements : [];
+    this.sprints = sprints ? sprints : [];   
+    this.status = status ? status : '';
   }
 }
-
-export default Service;

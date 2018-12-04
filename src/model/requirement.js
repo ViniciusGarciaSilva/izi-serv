@@ -3,9 +3,7 @@ export class Requirement {
   priority;
 
   constructor(name, priority){
-    this.name = name;
-    this.priority = priority;
+    this.name = name ? name : null;
+    this.priority = priority ? priority : null;
   }
 }
-
-export default Requirement;

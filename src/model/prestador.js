@@ -1,14 +1,11 @@
-class Prestador {
+export class Prestador {
   name;
   email;
   office;
 
   constructor(name, email, office) {
-    this.name = name;
-    this.email = email;
-    this.office = office;
-
+    this.name = name ? name : null; 
+    this.email = email ? email : null;
+    this.office = office ? office : null;
   }
 }
-
-export default Prestador;

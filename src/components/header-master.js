@@ -18,9 +18,9 @@ class HeaderMaster extends React.Component {
             active={false}
           />
         </Link>
-        <Link to='/serviços'>
+        <Link to='/servicos'>
           <Menu.Item
-            name='Servicos'
+            name='Serviços'
             active={false}
           />
         </Link>
