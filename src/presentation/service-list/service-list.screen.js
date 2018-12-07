@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
 import { NavLink, Route } from 'react-router-dom';
-import { getServiceList } from '../../data/service-list.data';
+import { getServiceList } from './../../data/service-list.datasource';
 
 class ServiceList extends React.Component {
   constructor(props) {

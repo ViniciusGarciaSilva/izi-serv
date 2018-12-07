@@ -11,6 +11,8 @@ import Home from './presentation/home/home';
 import HeaderMaster from './components/header-master';
 import ServiceList from './presentation/service-list/service-list.screen';
 import ProjectList from './presentation/project-list/project-list.screen';
+import Integradores from './presentation/list-integradores/integradores';
+import ProjectDetailScreen from './presentation/project-detail/project-detail.screen';
 
 class App extends Component {
   handleItemClick() {
@@ -30,8 +32,10 @@ class App extends Component {
             <Route path='/cadastro' exact component={SignUpScreen} />
             <Route path='/login' exact component={LoginScreen} />
             <Route path='/prestadores' component={Prestadores} />
+            <Route path='/integradores' component={Integradores} />
             <Route path='/projetos' component={ProjectList} />
             <Route path='/servicos' component={ServiceList} />
+            <Route path='/projeto-detalhe' component={ProjectDetailScreen} />
           </Switch>
         </Container>
       </div>

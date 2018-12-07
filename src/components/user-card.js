@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-class CardExampleCard extends React.Component {
+class UserCard extends React.Component {
   render() {
     return(
       <Card>
@@ -25,4 +25,4 @@ class CardExampleCard extends React.Component {
 }
   
 
-export default CardExampleCard
+export default UserCard

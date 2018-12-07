@@ -1,4 +1,4 @@
-import { Service } from './../model/service';
+import { Service } from '../model/service';
 
 export function getServiceList() {
     const serviceListMock = [

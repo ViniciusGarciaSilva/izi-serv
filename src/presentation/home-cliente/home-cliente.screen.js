@@ -22,11 +22,11 @@ class HomeCliente extends Component {
     return (
       projects.map((project) =>
         <Container>
-          <Item.Content style={{ marginTop: 20, marginBottom: 20 }} key={project.general.name}>
-            <Item.Header as='h3'><NavLink to='/projeto'>{project.general.name} </NavLink></Item.Header>
-            <Item.Description><p>{project.general.description}</p></Item.Description>
+          <Item.Content style={{ marginTop: 20, marginBottom: 20 }} key={project.name}>
+            <Item.Header as='h3'><NavLink to='/projeto'>{project.name} </NavLink></Item.Header>
+            <Item.Description><p>{project.details}</p></Item.Description>
             <Item.Extra style={{ marginTop: 10 }}>
-              <Label>{project.general.theme}</Label>
+              <Label>{project.theme}</Label>
             </Item.Extra>
           </Item.Content>
           <Divider />
@@ -78,25 +78,19 @@ class HomeCliente extends Component {
   // MOCK
   projectsMock = [
     new Project(
-      {
-        name: 'Project Name 1',
-        description: 'Project Description Project Description Project Description Project Description',
-        theme: 'Android 1'
-      },
+      'Project Name 1',
+      'Project Description Project Description Project Description Project Description',
+      'Android 1',
     ),
     new Project(
-      {
-        name: 'Project Name 2',
-        description: 'Project Description Project Description Project Description Project Description',
-        theme: 'Android 2'
-      },
+      'Project Name 1',
+      'Project Description Project Description Project Description Project Description',
+      'Android 1',
     ),
     new Project(
-      {
-        name: 'Project Name 3',
-        description: 'Project Description Project Description Project Description Project Description',
-        theme: 'Android 3'
-      },
+      'Project Name 1',
+      'Project Description Project Description Project Description Project Description',
+      'Android 1',
     ),
   ];
 

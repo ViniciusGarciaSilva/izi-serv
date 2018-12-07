@@ -10,7 +10,7 @@ class IdeaCard extends Component {
         <Card.Content>
           <Card.Header>Exponha sua ideia</Card.Header>
 
-          <Card.Description>Exponha sua ideia e escolha um de nossos integradores disponíveis para torná-la realidade</Card.Description>
+          <Card.Description>Exponha sua ideia e escolha um de nossos integradores para torná-la realidade</Card.Description>
         </Card.Content>
         <Card.Content extra>
         </Card.Content>

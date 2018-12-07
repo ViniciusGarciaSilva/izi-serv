@@ -3,7 +3,8 @@ import InfiniteScroll from 'react-infinite-scroller';
 import { CardGroup } from 'semantic-ui-react';
 import UserCard from './../../components/user-card';
 
-class Prestadores extends Component {
+
+class Integradores extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +41,7 @@ class Prestadores extends Component {
         pageStart={0}
         // loadMore={loadFunc}
         hasMore={true}
-        loader={<div className="loader" key={0}>Loading ...</div>}
+        loader={<div className="loader" key={0}></div>}
     >
        {itens}
       </InfiniteScroll>
@@ -48,4 +49,4 @@ class Prestadores extends Component {
   }
 }
 
-export default Prestadores;
+export default Integradores;

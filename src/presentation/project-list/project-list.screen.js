@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
 import { NavLink, Route } from 'react-router-dom';
-import { getProjectList } from './../../data/project-list.data';
+import { getProjectList } from './../../data/project.datasource';
 
 class ProjectList extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class ProjectList extends React.Component {
       projectList.map((project) =>
       <Container>
         <Item.Content style={{marginTop:20, marginBottom: 20}} key={project.name}>
-          <Item.Header as='h3'><NavLink to='/projeto'>{project.name} </NavLink></Item.Header>
+          <Item.Header as='h3'><NavLink to='/projeto-detalhe'>{project.name} </NavLink></Item.Header>
           <Item.Meta>
             <span className='cinema'>Owner: {project.cliente}</span>
           </Item.Meta>

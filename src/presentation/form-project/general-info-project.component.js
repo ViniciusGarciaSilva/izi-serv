@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Select } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 const options = [
   { key: 'android', text: 'Android', value: 'android' },
@@ -12,9 +12,9 @@ class GeneralInfoProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projectTheme: this.props.generalInfo.theme,
-      projectName: this.props.generalInfo.name,
-      projectDetails: this.props.generalInfo.details,
+      projectTheme: this.props.projectTheme,
+      projectName: this.props.projectName,
+      projectDetails: this.props.projectDetails,
       themeValid: false,
       nameValid: false,
       detailsValid: false,
@@ -35,17 +35,20 @@ class GeneralInfoProject extends Component {
     var theme = data.value;
     var themeValid = this.checkTheme(theme);
     this.setState({
-      projectTheme: theme, themeValid: themeValid
+      projectTheme: theme,
+      themeValid: themeValid,
     },
       this.checkValidForm(this.state.nameValid, themeValid, this.state.detailsValid)
     );
   }
 
   onChangeProjectDetails = (event) => {
-    var details = event.target.value;
-    var detailsValid = this.checkName(details);
+    console.log(this.state.projectDetails);
+    const details = event.target.value;
+    const detailsValid = this.checkName(details);
     this.setState({
-      projectDetails: details, detailsValid: detailsValid
+      projectDetails: details,
+      detailsValid: detailsValid,
     },
       this.checkValidForm(this.state.nameValid, this.state.themeValid, detailsValid)
     );
@@ -96,6 +99,7 @@ class GeneralInfoProject extends Component {
           <Form.Select
             label='Tema do Projeto'
             options={options}
+            value={this.state.projectTheme}
             placeholder='Tema do Projeto'
             onChange={(event, data) => this.onChangeProjectTheme(event, data)}
           />

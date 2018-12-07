@@ -14,11 +14,11 @@ class Home extends Component {
         <Segment inverted
           color='blue tertiary'
           textAlign='center'
-          style={{ minHeight: 300 }}
+          style={{ minHeight: 250 }}
           vertical
         >
         </Segment>
-        <CardGroup fluid centered style={{ marginTop: 50 }}>
+        <CardGroup fluid centered style={{ marginTop: 30 }}>
           <NavLink to='/idea'><IdeaCard /></NavLink>
           <NavLink to='/projetos'><ProjectCard/></NavLink>
           <NavLink to='/servicos'><ServiceCard/></NavLink>

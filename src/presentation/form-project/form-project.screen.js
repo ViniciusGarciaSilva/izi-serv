@@ -5,6 +5,7 @@ import { Project } from './../../model/project';
 import StepsIdea from './step-idea.component';
 import ListRequirement from './../../components/list-requirement.component';
 import ListSprint from './../../components/list-sprints.component';
+import { createProject } from '../../data/project.datasource';
 
 class FormProjectScreen extends Component {
   constructor() {
@@ -17,7 +18,7 @@ class FormProjectScreen extends Component {
         { valid: false, number: 3 },
         { valid: false, number: 4 },
       ],
-      project: new Project('', [], [], ''),
+      project: new Project(),
       generalValid: false,
     }
   }
@@ -37,7 +38,7 @@ class FormProjectScreen extends Component {
             size='big'
             center
             color='blue'
-            onClick={() => this.setState({ step: this.state.step + 1 })}
+            onClick={this.handleSubmitTap}
           > 
             Enviar
           </Button>
@@ -47,13 +48,15 @@ class FormProjectScreen extends Component {
   }
 
   createForm() {
-    if (this.state.currentStep === 1) {
+    if (this.state.currentStep == 1) {
       return (
         <Container style={{ marginTop: 30 }}>
           <Header as='h2'>Informações Gerais</Header>
           <Segment >
             <GeneralInfoProject
-              generalInfo={this.state.project.general}
+              projectTheme={this.state.project.theme}
+              projectName={this.state.project.name}
+              projectDetails={this.state.project.details}
               validForms={this.validGeneralInfo}
             />
           </Segment>
@@ -114,7 +117,10 @@ class FormProjectScreen extends Component {
 
   validGeneralInfo = (name, theme, details, isValid) => {
     var project = this.state.project;
-    project.general = { name, theme, details };
+    project.name = name;
+    project.theme = theme;
+    project.details = details;
+    console.log(project);
     var steps = this.state.steps;
     steps[0].valid = isValid;
     this.setState({ project: project, steps: steps });
@@ -137,7 +143,6 @@ class FormProjectScreen extends Component {
   }
 
   validSprints = (sprintList, isValid) => {
-    console.log(this.state.project);
     var project = this.state.project;
     project.sprints = sprintList;
     var steps = this.state.steps;
@@ -147,6 +152,10 @@ class FormProjectScreen extends Component {
 
   onStepClick = (step) => {
     this.setState({ currentStep: step });
+  }
+
+  handleSubmitTap = () => {
+    createProject(this.state.project);
   }
 }
 export default FormProjectScreen;

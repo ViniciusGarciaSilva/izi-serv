@@ -3,7 +3,7 @@ export class Project {
   integrador;
   prestadores;
   name;
-  them;
+  theme;
   details;
   functionalRequirements;
   notFunctionalRequirements;
