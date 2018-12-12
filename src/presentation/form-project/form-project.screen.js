@@ -6,6 +6,7 @@ import StepsIdea from './step-idea.component';
 import ListRequirement from './../../components/list-requirement.component';
 import ListSprint from './../../components/list-sprints.component';
 import { createProject } from '../../data/project.datasource';
+import { getClienteMock } from '../../data/cliente.datasource';
 
 class FormProjectScreen extends Component {
   constructor() {
@@ -48,7 +49,7 @@ class FormProjectScreen extends Component {
   }
 
   createForm() {
-    if (this.state.currentStep == 1) {
+    if (this.state.currentStep === 1) {
       return (
         <Container style={{ marginTop: 30 }}>
           <Header as='h2'>Informações Gerais</Header>
@@ -63,7 +64,7 @@ class FormProjectScreen extends Component {
         </Container>
       )
     }
-    if (this.state.currentStep == 2) {
+    if (this.state.currentStep === 2) {
       return (
         <Container style={{ marginTop: 30 }}>
           <Header as='h2'>Requisitos Funcionais</Header>
@@ -77,7 +78,7 @@ class FormProjectScreen extends Component {
         </Container>
       )
     }
-    if (this.state.currentStep == 3) {
+    if (this.state.currentStep === 3) {
       return (
         <Container style={{ marginTop: 30 }}>
           <Header as='h2'>Requisitos Não-Funcionais</Header>
@@ -91,7 +92,7 @@ class FormProjectScreen extends Component {
         </Container>
       )
     }
-    if (this.state.currentStep == 4) {
+    if (this.state.currentStep === 4) {
       return (
         <Container style={{ marginTop: 30 }}>
           <Header as='h2'>Sprints</Header>
@@ -120,7 +121,6 @@ class FormProjectScreen extends Component {
     project.name = name;
     project.theme = theme;
     project.details = details;
-    console.log(project);
     var steps = this.state.steps;
     steps[0].valid = isValid;
     this.setState({ project: project, steps: steps });
@@ -155,7 +155,11 @@ class FormProjectScreen extends Component {
   }
 
   handleSubmitTap = () => {
-    createProject(this.state.project);
+    var project = this.state.project;
+    project.cliente = getClienteMock().name;
+    project.status = 'Aberto';
+    this.setState({project});
+    createProject(project);
   }
 }
 export default FormProjectScreen;

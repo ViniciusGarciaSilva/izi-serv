@@ -30,12 +30,12 @@ class ListRequirement extends Component {
   }
 
   checkValidRequirements() {
-    if (this.state.listRequirements.length == 0) {
+    if (this.state.listRequirements.length === 0) {
       this.props.validForms(this.state.listRequirements, false);
       return;
     }
     for (var i = 0; i < this.state.listRequirements.length; i++) {
-      if (this.state.listRequirements[i].name == '' || this.state.listRequirements[i].priority == '') {
+      if (this.state.listRequirements[i].name === (''||null) || this.state.listRequirements[i].priority === (''||null) ) {
         this.props.validForms(this.state.listRequirements, false);
         return;
       }

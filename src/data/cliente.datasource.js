@@ -4,8 +4,12 @@ export function getCliente(name) {
   return clienteMock;
 }
 
+export function getClienteMock() {
+  return clienteMock;
+}
+
 const clienteMock = new Cliente(
-  'Cliente 1',
-  'cliente1@email.com',
+  'Brad Pitt',
+  'bradpitt@hotmail.com',
   'cliente',
 );

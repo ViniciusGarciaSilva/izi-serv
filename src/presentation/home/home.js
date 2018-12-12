@@ -1,6 +1,6 @@
-import React, { Component, View } from 'react';
+import React, { Component } from 'react';
 import { Segment, CardGroup } from 'semantic-ui-react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import IdeaCard from './cards/idea-card';
 import ProjectCard from './cards/project-card';
 import ServiceCard from './cards/service-card';

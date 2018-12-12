@@ -63,23 +63,23 @@ class ListSprint extends Component {
   }
 
   checkTheme(theme) {
-    return theme!='';
+    return theme!==(''||null);
   }
 
   checkStart(start) {
-    return start!='';
+    return start!==(''||null);
   }
 
   checkEnd(end) {
-    return end!='';
+    return end!==(''||null);
   }
 
   checkDescription(description) {
-    return description!='';
+    return description!==(''||null);
   }
 
   validSprints() {
-    if ( this.state.sprintList.length==0 ) {
+    if ( this.state.sprintList.length===0 ) {
       return false;
     }
     for ( var i=0 ; i<this.state.sprintList.length ; i++ ) {

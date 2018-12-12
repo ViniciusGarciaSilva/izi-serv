@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Header, Icon, Image, Menu, Segment, Sidebar, Grid, GridColumn, Checkbox } from 'semantic-ui-react';
+import { Card, Header, Icon, Image, Segment, Grid, Checkbox } from 'semantic-ui-react';
 import { Cliente } from '../../model/cliente';
 import { Integrador } from '../../model/integrador'
 import ManBusiness from '../../images/man-business.svg'

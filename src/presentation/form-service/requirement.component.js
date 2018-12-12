@@ -53,6 +53,7 @@ class RequirementComponent extends Component {
             fluid
             label='Prioridade'
             placeholder='Nível de prioridade'
+            value={this.state.requirement.priority}
             options={options}
             onChange={(event, data) => this.handlePriorityChange(event.target.value, data)}
           />

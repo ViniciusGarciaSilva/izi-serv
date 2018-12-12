@@ -1,5 +1,5 @@
 import { Project } from '../model/project';
-import { Cliente } from '../model/cliente';
+import { Sprint } from './../model/sprint';
 
 export function getProjectList() {
   return projectsMock;
@@ -13,12 +13,33 @@ export function getProject(name) {
   return projectMock;
 }
 
+const sprintMock = new Sprint(
+  'theme',
+  '00/00/00',
+  '12/12/12',
+  'Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description ',
+);
+
 const projectMock = new Project(
-  'Project Name 1',
+  'Project Name',
   'Project Description Project Description Project Description Project Description Project Description Project Description Project Description Project Description Project Description Project Description Project Description Project Description',
-  'Android 1',
-  'Cliente 1',
-)
+  'Android',
+  'Cliente',
+  'Ingrador',
+  'Prestador',
+  [
+    { name: 'Functional Requirement 1', priority: 'High' },
+    { name: 'Functional Requirement 2', priority: 'Medium' },
+    { name: 'Functional Requirement 3', priority: 'Low' },
+  ],
+  [
+    { name: 'Not Functional Requirement 1', priority: 'High' },
+    { name: 'Not Functional Requirement 2', priority: 'Medium' },
+    { name: 'Not Functional Requirement 3', priority: 'Low' },
+  ],
+  [sprintMock, sprintMock, sprintMock, sprintMock],
+  'Status'
+);
 
 const projectsMock = [
   new Project(

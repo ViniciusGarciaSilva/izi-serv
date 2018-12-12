@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
-import { NavLink, Route } from 'react-router-dom';
+import { Item, Label, Segment, Divider, Container } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 import { getProjectList } from './../../data/project.datasource';
 
 class ProjectList extends React.Component {

@@ -43,7 +43,6 @@ class GeneralInfoProject extends Component {
   }
 
   onChangeProjectDetails = (event) => {
-    console.log(this.state.projectDetails);
     const details = event.target.value;
     const detailsValid = this.checkName(details);
     this.setState({
@@ -54,7 +53,7 @@ class GeneralInfoProject extends Component {
     );
   }
 
-  checkValidForm(nameValid, themeValid, detailsValid) {
+  checkValidForm = (nameValid, themeValid, detailsValid) => () => {
     this.props.validForms(
       this.state.projectName,
       this.state.projectTheme,
@@ -69,7 +68,7 @@ class GeneralInfoProject extends Component {
   }
 
   checkTheme(theme) {
-    return theme != '';
+    return theme !== '';
   }
 
   checkDetails(details) {

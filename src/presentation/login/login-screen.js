@@ -3,10 +3,6 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import logo from '../../images/logo.png'
 
 class LoginScreen extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
 

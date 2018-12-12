@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom';
-import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Header, Container } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import { Item, Label, Segment, Grid, Card, Image, Icon, Divider, Container } from 'semantic-ui-react';
 import ManBusiness from '../../images/man-business.svg'
 import { Cliente } from './../../model/cliente';
 import { Project } from './../../model/project';
