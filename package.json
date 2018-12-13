@@ -2,6 +2,7 @@
   "name": "izi-serv",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://viniciusgarciasilva.github.io/izi-serv/",
   "dependencies": {
     "jshint": "^2.9.6",
     "react": "^16.5.2",
