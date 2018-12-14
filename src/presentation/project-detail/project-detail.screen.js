@@ -17,13 +17,14 @@ class ProjectDetailScreen extends Component {
   async componentWillMount() {
     var cliente;
     var project;
-    await getProject('Projeto 1').then(response => {
+    console.log(this.props.match.params.projectName);
+    await getProject(this.props.match.params.projectName).then(response => {
       project=response;
       console.log(project);
     });
     await getCliente(project.cliente).then(response => {
       cliente=response;
-      console.log(cliente);
+      console.log('CLIENTE',cliente);
     });
     this.setState({cliente, project});
   }

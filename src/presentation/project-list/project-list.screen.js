@@ -21,7 +21,7 @@ class ProjectList extends React.Component {
         {this.state.projectList.map(project =>
           <Container>
             <Item.Content style={{ marginTop: 20, marginBottom: 20 }} key={project.name}>
-              <Item.Header as='h3'><NavLink to='/projeto-detalhe'>{project.name} </NavLink></Item.Header>
+              <Item.Header as='h3'><NavLink to={`/projeto-detalhe/${project.name}`}>{project.name} </NavLink></Item.Header>
               <Item.Meta>
                 <span className='cinema'>Owner: {project.cliente}</span>
               </Item.Meta>

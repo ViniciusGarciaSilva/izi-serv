@@ -2,7 +2,7 @@ import { Service } from '../model/service';
 import axios from 'axios';
 
 export function getServiceList() {
-  return axios('http://127.0.0.1:5000/servicos', {
+  return axios('http://127.0.0.1:5000/services', {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -12,16 +12,16 @@ export function getServiceList() {
     .then((response) => {
       const serviceList = response.data.map(service => {
         return new Service(
-          service.nome,
-          service.tema,
-          service.detalhes,
-          service.projeto,
-          service.cliente,
-          service.integrador,
-          service.prestador,
-          service.requisitosFuncionais,
-          service.requisitosNaoFuncionais,
-          service.sprints,
+          service.name,
+          service.details,
+          service.theme,
+          'Integrador',
+          'Projeto',
+          'Cliente',
+          'Prestador',
+          service.funcReq,
+          service.notFuncReq,
+          [],
           service.status,
         )
       });

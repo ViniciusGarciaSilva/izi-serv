@@ -38,8 +38,10 @@ class ServiceList extends React.Component {
   }
 
   loadList() {
-    const serviceList = getServiceList();
-    this.setState({ serviceList: serviceList });
+    getServiceList().then(response => {
+      console.log(response)
+      this.setState({ serviceList: response });
+    });
   }
 }
 

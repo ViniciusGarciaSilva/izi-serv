@@ -27,7 +27,7 @@ class ProjectDetail extends React.Component {
           <Grid.Column width={7} style={{ marginLeft: 20, marginRight: 20 }} >
             {this.props.project.sprints.map(sprint => (
               <Grid.Row style={{ marginBottom: 40 }}>
-                <Segment raised>
+                <Segment style={{marginTop: 15}} raised>
                   <Header as='h3'>{sprint.theme}</Header>
                   <Segment basic style={{ textAlign: 'justify' }}>
                     {sprint.description}

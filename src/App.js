@@ -35,7 +35,7 @@ class App extends Component {
             <Route path='/integradores' component={Integradores} />
             <Route path='/projetos' component={ProjectList} />
             <Route path='/servicos' component={ServiceList} />
-            <Route path='/projeto-detalhe' component={ProjectDetailScreen} />
+            <Route name='project-detail' path='/projeto-detalhe/:projectName' component={ProjectDetailScreen} />
           </Switch>
         </Container>
       </div>

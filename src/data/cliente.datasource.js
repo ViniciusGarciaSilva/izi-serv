@@ -1,7 +1,9 @@
 import { Cliente } from './../model/cliente';
+import axios from 'axios';
 
 export function getCliente(name) {
-  return axios('http://127.0.0.1:5000/cliente/' + name, {
+  console.log(name);
+  return axios('http://127.0.0.1:5000/cliente/1', {
     method: 'GET',
     headers: {
       Accept: 'application/json',

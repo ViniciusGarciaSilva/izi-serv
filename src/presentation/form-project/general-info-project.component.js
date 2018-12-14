@@ -5,7 +5,13 @@ const options = [
   { key: 'android', text: 'Android', value: 'android' },
   { key: 'ios', text: 'IOS', value: 'ios' },
   { key: 'web', text: 'Web', value: 'web' },
-  { key: 'outros', text: 'Outros', value: 'outros' },
+  { key: 'Database', text: 'Database', value: 'Database' },
+  { key: 'I.A', text: 'I.A', value: 'I.A' },
+  { key: 'Automation', text: 'Automation', value: 'Automation' },
+  { key: 'Video', text: 'Video', value: 'Video' },
+  { key: 'Audio', text: 'Audio', value: 'Audio' },
+  { key: 'Eletronic', text: 'Eletronic', value: 'Eletronic' },
+  { key: 'outros', text: 'Outros', value: 'outros' }
 ]
 
 class GeneralInfoProject extends Component {

@@ -4,6 +4,7 @@ import { Cliente } from '../../model/cliente';
 import { Integrador } from '../../model/integrador'
 import ManBusiness from '../../images/man-business.svg'
 import WomanBusiness from '../../images/woman-business.svg'
+import { Sprint } from '../../model/sprint';
 
 class OverviewCliente extends Component {
   constructor() {
@@ -51,48 +52,20 @@ class OverviewCliente extends Component {
             <Grid.Row style={{ marginRight: 40 }}>
               <Segment raised>
                 <Header as='h3'>Sprint 1</Header>
-                <Checkbox label='Starting project' />
+                <Checkbox label={sprintsMock[0].theme} />
                 <Segment basic style={{ textAlign: 'justify' }}>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa strong.
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                  pellentesque eu, pretium quis, sem.
-                  Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-                  aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                  imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-                  link mollis pretium. Integer tincidunt. Cras dapibus.
-                  Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-                  Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-                  Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-                  Phasellus viverra nulla ut metus varius laoreet.
-                  Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
-                  Curabitur ullamcorper ultricies nisi.
-                                    </Segment>
+                  {sprintsMock[0].description}
+                </Segment>
               </Segment>
             </Grid.Row>
             <br />
             <Grid.Row style={{ marginRight: 40 }}>
               <Segment raised>
                 <Header as='h3'>Sprint 2</Header>
-                <Checkbox label='Feature 1' />
+                <Checkbox label={sprintsMock[1].theme} />
                 <Segment basic style={{ textAlign: 'justify' }}>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa strong.
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                  pellentesque eu, pretium quis, sem.
-                  Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-                  aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                  imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-                  link mollis pretium. Integer tincidunt. Cras dapibus.
-                  Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-                  Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-                  Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-                  Phasellus viverra nulla ut metus varius laoreet.
-                  Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
-                  Curabitur ullamcorper ultricies nisi.
-                                    </Segment>
+                  {sprintsMock[1].description}
+                </Segment>
               </Segment>
             </Grid.Row>
           </Grid.Column>
@@ -125,3 +98,24 @@ class OverviewCliente extends Component {
 }
 
 export default OverviewCliente;
+
+const sprintsMock = [
+  new Sprint(
+    'Criação da interface básica',
+    '14/12/2018',
+    '21/12/2018',
+    'Criação da interface básica da aplicação. Não é necessário que as funcionalidades estejam implementadas, mas sim que haja a identidade visual da aplicação'
+  ),
+  new Sprint(
+    'Roteamento das telas',
+    '21/12/2018',
+    '28/12/2018',
+    'Roteamento das telas de navegação da aplicação. Deve ser possível navegar por todas as telas incluídas no escopo'
+  ),
+  new Sprint(
+    'Permanência dos dados',
+    '28/12/2018',
+    '05/01/2019',
+    'Os dados embutidos na aplicação devem ser armazenados na nuvem e passíveis de serem consultado a qualquer momento.'
+  ),
+];
