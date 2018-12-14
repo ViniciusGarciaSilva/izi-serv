@@ -22,8 +22,8 @@ class App extends Component {
   render() {
     return (
       <div>
-      <HeaderMaster/>
-        <Container style={{paddingTop: 43}}>
+        <HeaderMaster />
+        <Container style={{ paddingTop: 43 }}>
           <Switch>
             <Route path='/izi-serv' exact component={Home} />
             <Route path='/idea' component={FormProjectScreen} />

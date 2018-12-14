@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
-import { logo } from '../../images/logo.png';
+import logo3 from '../../images/Logo3.png';
 
 const options = [
 	{ key: 'alta', text: 'Cliente', value: 'cliente' },
@@ -15,8 +15,8 @@ class SignUpScreen extends Component {
 				<Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
 					<Grid.Column style={{ maxWidth: 450 }}>
 						<Header as='h2' textAlign='center' style={{ color: '#2185d0' }}>
-							<Image src={logo} /> Cadastre-se
-                        </Header>
+							<Image src={logo3}/> Cadastre-se
+            </Header>
 						<Form size='large'>
 							<Segment stacked>
 								<Form.Input fluid placeholder='Nome' />
