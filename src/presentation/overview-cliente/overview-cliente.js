@@ -101,7 +101,7 @@ class OverviewCliente extends Component {
             <Card align='left'>
               <Image centered src={WomanBusiness} fluid />
               <Card.Content>
-                <Card.Header>Olá, {this.integrador.name} !</Card.Header>
+                <Card.Header>{this.integrador.name} quer assumir seu projeto!</Card.Header>
                 <Card.Meta>
                   <span className='office'>{this.integrador.office}</span>
                 </Card.Meta>

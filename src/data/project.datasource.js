@@ -10,8 +10,8 @@ export function getProjectList() {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) => { 
-      const projectList = response.data.map( project => {
+    .then((response) => {
+      const projectList = response.data.map(project => {
         return new Project(
           project.nome,
           project.detalhes,
@@ -23,12 +23,12 @@ export function getProjectList() {
           project.requisitosNaoFuncionais,
           project.sprints,
           project.status,
-        ) 
+        )
       });
       console.log(projectList);
-      return projectList;  
+      return projectList;
     })
-    .catch((error) => { throw (error.response.data.errors[0].message) })
+    .catch((error) => { throw (error.message) })
 }
 
 export function createProject(project) {
@@ -44,11 +44,34 @@ export function createProject(project) {
     }),
   })
     .then((response) => { console.log(response); return (response.data) })
-    .catch((error) => { throw (error.response.data.errors[0].message) })
+    .catch((error) => { throw (error.message) })
 }
 
 export function getProject(name) {
-  return projectMock;
+  return axios('http://127.0.0.1:5000/projeto/' + name, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      const project = response.data;
+      console.log(project);
+      return new Project(
+        project.nome,
+        project.detalhes,
+        project.tema,
+        project.cliente,
+        project.integrador,
+        project.prestadores,
+        project.requisitosFuncionais,
+        project.requisitosNaoFuncionais,
+        project.sprints,
+        project.status,
+      );
+    })
+    .catch((error) => { throw (error.message) })
 }
 
 const sprintMock = new Sprint(
