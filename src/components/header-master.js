@@ -6,7 +6,7 @@ class HeaderMaster extends React.Component {
   render() {
     return (
       <Menu fixed='top' inverted color='blue' pointing size='large'>
-        <Link to='/'>
+        <Link to='/izi-serv'>
           <Menu.Item
             name='home'
             active={true}
