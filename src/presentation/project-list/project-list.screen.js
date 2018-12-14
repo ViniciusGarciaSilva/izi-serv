@@ -11,41 +11,37 @@ class ProjectList extends React.Component {
     }
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.loadList();
   }
-  
-  mapperproject(projectList) {
-    return (
-      projectList.map((project) =>
-      <Container>
-        <Item.Content style={{marginTop:20, marginBottom: 20}} key={project.name}>
-          <Item.Header as='h3'><NavLink to='/projeto-detalhe'>{project.name} </NavLink></Item.Header>
-          <Item.Meta>
-            <span className='cinema'>Owner: {project.cliente}</span>
-          </Item.Meta>
-          <Item.Description style={{ marginTop: 15 }}><p>{project.details}</p></Item.Description>
-          <Item.Extra style={{ marginTop: 15 }}>
-            <Label>{project.theme}</Label>
-          </Item.Extra>
-        </Item.Content>
-        <Divider/>
-      </Container>
-      )
-    );
-  }
-  
+
   render() {
     return (
-      <Segment style={{marginTop: 30}}>
-        {this.mapperproject(this.state.projectList)}
+      <Segment style={{ marginTop: 30 }}>
+        {this.state.projectList.map(project =>
+          <Container>
+            <Item.Content style={{ marginTop: 20, marginBottom: 20 }} key={project.name}>
+              <Item.Header as='h3'><NavLink to='/projeto-detalhe'>{project.name} </NavLink></Item.Header>
+              <Item.Meta>
+                <span className='cinema'>Owner: {project.cliente}</span>
+              </Item.Meta>
+              <Item.Description style={{ marginTop: 15 }}><p>{project.details}</p></Item.Description>
+              <Item.Extra style={{ marginTop: 15 }}>
+                <Label>{project.theme}</Label>
+              </Item.Extra>
+            </Item.Content>
+            <Divider />
+          </Container>
+        )}
       </Segment>
     );
   }
 
   loadList() {
-    const projectList = getProjectList();
-    this.setState({projectList: projectList});
+    getProjectList().then(response => {
+      console.log(response)
+      this.setState({ projectList: response });
+    });
   }
 }
 

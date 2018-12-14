@@ -11,41 +11,35 @@ class ServiceList extends React.Component {
     }
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.loadList();
   }
-  
-  mapperProjects(serviceList) {
-    return (
-      serviceList.map((service) =>
-      <Container>
-        <Item.Content style={{marginTop:20, marginBottom: 20}} key={service.name}>
-          <Item.Header as='h3'><NavLink to='/servicos'>{service.name} </NavLink></Item.Header>
-          <Item.Meta>
-            <span className='cinema'>Employer: {service.integrador}</span>
-          </Item.Meta>
-          <Item.Description style={{ marginTop: 15 }}><p>{service.details}</p></Item.Description>
-          <Item.Extra style={{ marginTop: 15 }}>
-            <Label>{service.theme}</Label>
-          </Item.Extra>
-        </Item.Content>
-        <Divider/>
-      </Container>
-      )
-    );
-  }
-  
+
   render() {
     return (
-      <Segment style={{marginTop: 30}}>
-        {this.mapperProjects(this.state.serviceList)}
+      <Segment style={{ marginTop: 30 }}>
+        {this.state.serviceList.map((service) =>
+          <Container>
+            <Item.Content style={{ marginTop: 20, marginBottom: 20 }} key={service.name}>
+              <Item.Header as='h3'><NavLink to='/servicos'>{service.name} </NavLink></Item.Header>
+              <Item.Meta>
+                <span className='cinema'>Employer: {service.integrador}</span>
+              </Item.Meta>
+              <Item.Description style={{ marginTop: 15 }}><p>{service.details}</p></Item.Description>
+              <Item.Extra style={{ marginTop: 15 }}>
+                <Label>{service.theme}</Label>
+              </Item.Extra>
+            </Item.Content>
+            <Divider />
+          </Container>
+        )}
       </Segment>
     );
   }
 
   loadList() {
     const serviceList = getServiceList();
-    this.setState({serviceList: serviceList});
+    this.setState({ serviceList: serviceList });
   }
 }
 

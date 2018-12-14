@@ -1,12 +1,50 @@
 import { Project } from '../model/project';
 import { Sprint } from './../model/sprint';
+import axios from 'axios';
 
 export function getProjectList() {
-  return projectsMock;
+  return axios('http://127.0.0.1:5000/projetos', {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => { 
+      const projectList = response.data.map( project => {
+        return new Project(
+          project.nome,
+          project.detalhes,
+          project.tema,
+          project.cliente,
+          project.integrador,
+          project.prestadores,
+          project.requisitosFuncionais,
+          project.requisitosNaoFuncionais,
+          project.sprints,
+          project.status,
+        ) 
+      });
+      console.log(projectList);
+      return projectList;  
+    })
+    .catch((error) => { throw (error.response.data.errors[0].message) })
 }
 
 export function createProject(project) {
-  console.log(project);
+  return axios('http://127.0.0.1:5000/projeto', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    data: ({
+      'nome': project.name,
+      'detalhes': project.details,
+    }),
+  })
+    .then((response) => { console.log(response); return (response.data) })
+    .catch((error) => { throw (error.response.data.errors[0].message) })
 }
 
 export function getProject(name) {
