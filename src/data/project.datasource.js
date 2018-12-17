@@ -1,6 +1,7 @@
 import { Project } from '../model/project';
 import { Sprint } from './../model/sprint';
 import axios from 'axios';
+import { Requirement } from './../model/requirement';
 
 export function getProjectList() {
   return axios('https://iziserv.gq/projetos', {
@@ -12,17 +13,16 @@ export function getProjectList() {
   })
     .then((response) => {
       const projectList = response.data.map(project => {
-        var rand = themeMock[Math.floor(Math.random() * themeMock.length)];
         return new Project(
           project.nome,
           project.detalhes,
-          rand,
+          project.theme,
           project.cliente,
           project.integrador,
           project.prestadores,
-          project.funcReq,
-          project.notFuncReq,
-          project.sprints,
+          stringToRequirement(project.funcReq, '_', '%'),
+          stringToRequirement(project.notFuncReq, '_', '%'),
+          stringToSprint(project.sprints, '_', '%'),
           project.status,
         );
       });
@@ -42,9 +42,16 @@ export function createProject(project) {
     data: ({
       'nome': project.name,
       'detalhes': project.details,
-    }),
+      'theme': project.theme,
+      'cliente': project.cliente,
+      'integrador': project.integrador,
+      'prestadores': '',
+      'sprints': sprintToString(project.sprints, '_', '%'),
+      'funcReq': requirementToString(project.functionalRequirements, '_', '%'),
+      'notFuncReq': requirementToString(project.notFunctionalRequirements, '_', '%')
+    })
   })
-    .then((response) => { console.log(response); return (response.data) })
+    .then((response) => { console.log('createProject: ', response); return (response.data) })
     .catch((error) => { throw (error.message) })
 }
 
@@ -58,22 +65,67 @@ export function getProject(name) {
   })
     .then((response) => {
       const project = response.data;
-      console.log(project);
-      var rand = themeMock[Math.floor(Math.random() * themeMock.length)];
+      console.log('THIS', project);
+      console.log(stringToSprint(project.sprints))
       return new Project(
         project.nome,
         project.detalhes,
-        rand,
+        project.theme,
         project.cliente,
         project.integrador,
         project.prestadores,
-        project.requisitosFuncionais,
-        project.requisitosNaoFuncionais,
-        sprintsMock,
+        stringToRequirement(project.funcReq, '_', '%'),
+        stringToRequirement(project.notFuncReq, '_', '%'),
+        stringToSprint(project.sprints, '_', '%'),
         project.status,
       );
     })
     .catch((error) => { throw (error.message) })
+}
+
+function sprintToString(sprints, separator1, separator2) {
+  return sprints.map(sprint =>
+    sprint.theme + separator1 +
+    sprint.start + separator1 +
+    sprint.end + separator1 +
+    sprint.description
+  ).join(separator2)
+}
+
+function requirementToString(requirements, separator1, separator2) {
+  return requirements.map(requirement =>
+    requirement.name + separator1 + requirement.priority
+  ).join(separator2)
+}
+
+function stringToSprint(sprintString, separator1, separator2) {
+  const sprints = sprintString.split(separator2);
+  return sprints.map(sprint => {
+    const sprintArray = sprint.split(separator1);
+    return (
+      new Sprint(
+        sprintArray[0],
+        sprintArray[1],
+        sprintArray[2],
+        sprintArray[3]
+      )
+    )
+  }
+  )
+}
+
+function stringToRequirement(requirementString, separator1, separator2) {
+  const requirements = requirementString.split(separator2);
+  return requirements.map(requirement => {
+    const requirementSArray = requirement.split(separator1);
+    return (
+      new Requirement(
+        requirementSArray[0],
+        requirementSArray[1],
+      )
+    )
+  }
+  )
 }
 
 const themeMock = [

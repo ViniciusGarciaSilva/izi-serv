@@ -7,6 +7,7 @@ import ListRequirement from './../../components/list-requirement.component';
 import ListSprint from './../../components/list-sprints.component';
 import { createProject } from '../../data/project.datasource';
 import { getClienteMock } from '../../data/cliente.datasource';
+import { NavLink } from 'react-router-dom';
 
 class FormProjectScreen extends Component {
   constructor() {
@@ -33,16 +34,17 @@ class FormProjectScreen extends Component {
         />
         {this.createForm()}
         <Container textAlign='center' style={{ marginTop: 30, width: 150, marginBottom: 30 }}>
-          <Button
-            disabled={ this.validForm() ? false : true}
-            fluid
-            size='big'
-            center
-            color='blue'
-            onClick={this.handleSubmitTap}
-          > 
-            Enviar
-          </Button>
+          {this.validForm() ? 
+            <NavLink to='/izi-serv'>
+              <Button disabled={false} fluid size='big' center color='blue' onClick={this.handleSubmitTap}>
+                Enviar
+              </Button>
+            </NavLink>
+          : 
+            <Button disabled={true} fluid size='big' center color='blue' onClick={this.handleSubmitTap}>
+              Enviar
+            </Button>
+          }
         </Container>
       </Container>
     )
@@ -109,9 +111,9 @@ class FormProjectScreen extends Component {
 
   validForm() {
     return (
-      this.state.steps[0].valid && 
-      this.state.steps[1].valid && 
-      this.state.steps[2].valid && 
+      this.state.steps[0].valid &&
+      this.state.steps[1].valid &&
+      this.state.steps[2].valid &&
       this.state.steps[3].valid
     )
   }
@@ -148,18 +150,20 @@ class FormProjectScreen extends Component {
     var steps = this.state.steps;
     steps[3].valid = isValid;
     this.setState({ project: project, steps: steps });
-  }
+  };
 
   onStepClick = (step) => {
     this.setState({ currentStep: step });
-  }
+  };
 
   handleSubmitTap = () => {
     var project = this.state.project;
     project.cliente = getClienteMock().name;
     project.status = 'Aberto';
-    this.setState({project});
-    createProject(project);
-  }
+    this.setState({ project });
+    console.log('handleSubmitTap: ', project);
+    createProject(project).then(response => console.log(response));
+
+  };
 }
 export default FormProjectScreen;
