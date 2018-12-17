@@ -25,7 +25,7 @@ class App extends Component {
         <HeaderMaster />
         <Container style={{ paddingTop: 43 }}>
           <Switch>
-            <Route path='/izi-serv' exact component={Home} />
+            <Route path='/' exact component={Home} />
             <Route path='/idea' component={FormProjectScreen} />
             <Route path='/minha-conta' component={HomeCliente} />
             <Route path='/projeto' exact component={OverviewCliente} />
