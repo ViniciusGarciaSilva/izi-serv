@@ -2,7 +2,7 @@ import { Service } from '../model/service';
 import axios from 'axios';
 
 export function getServiceList() {
-  return axios('http://127.0.0.1:5000/services', {
+  return axios('https://iziserv.gq/services', {
     method: 'GET',
     headers: {
       Accept: 'application/json',

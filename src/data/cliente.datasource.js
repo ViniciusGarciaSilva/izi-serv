@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export function getCliente(name) {
   console.log(name);
-  return axios('http://127.0.0.1:5000/cliente/1', {
+  return axios('https://iziserv.gq/cliente/1', {
     method: 'GET',
     headers: {
       Accept: 'application/json',

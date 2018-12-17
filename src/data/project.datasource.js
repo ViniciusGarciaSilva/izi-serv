@@ -3,7 +3,7 @@ import { Sprint } from './../model/sprint';
 import axios from 'axios';
 
 export function getProjectList() {
-  return axios('http://127.0.0.1:5000/projetos', {
+  return axios('https://iziserv.gq/projetos', {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -33,7 +33,7 @@ export function getProjectList() {
 }
 
 export function createProject(project) {
-  return axios('http://127.0.0.1:5000/projeto', {
+  return axios('https://iziserv.gq/projeto', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -49,7 +49,7 @@ export function createProject(project) {
 }
 
 export function getProject(name) {
-  return axios('http://127.0.0.1:5000/projeto/' + name, {
+  return axios('https://iziserv.gq/projeto/' + name, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
